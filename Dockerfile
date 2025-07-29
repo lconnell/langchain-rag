@@ -1,6 +1,6 @@
 # Stage 1: Build Stage
 # This stage installs dependencies and builds the application.
-FROM python:3.11-slim AS builder
+FROM python:3.14.0rc1-slim AS builder
 
 # Set working directory
 WORKDIR /app
@@ -20,7 +20,7 @@ RUN pip install --upgrade pip --no-cache-dir --root-user-action=ignore && \
 
 # Stage 2: Runtime Stage
 # This stage creates a lean runtime image with only the necessary files.
-FROM python:3.11-slim AS runtime
+FROM python:3.14.0rc1-slim AS runtime
 
 # Add metadata
 LABEL maintainer="Lee Connell <lee.a.connell@gmail.com>"
